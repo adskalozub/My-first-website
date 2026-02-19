@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вот и всё</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="final">
+
+    <button class="big-button" onclick="showGallery()">Закончить страдания</button>
+
+    <div id="gallery" class="gallery">
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+
+    <a href="index.html" class="nav-btn">
+        <i class="fas fa-home"></i> Домой, Уолтер
+    </a>
+    
+    <script>
+        function showGallery() {
+            const gallery = document.getElementById('gallery');
+            if (gallery.classList.contains('show')) return; // уже показано
+
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = ''; // очистка
+
+            const photos = [
+                {
+                    src: 'accets/photo_2026-02-19_04-08-22.jpg',
+                    caption: 'Добрый день, мое имя Александр Скалозуб, группа НПИбд-02-24, номер ст. билета 1032241329, и это я сижу и пыхчу над этими лабораторными. На часах 4 утра и я до сих пор его делаю, даже не смотря на то, что мог оставить как есть, потому что хотел довести работу до идеала из того, что смог сделать'
+                },
+                {
+                    src: 'accets/photo_2026-02-19_04-08-35.jpg',
+                    caption: 'О правильном выполнении данной лабораторной работы я узнал не так давно, так как был занят другими пересдачами. Сейчас вам была представленна работа, над которой я работал что-то около 1.5 месяца и она менялась из раза в раз, но как получилось в общем.'
+                },
+                {
+                    src: 'accets/photo_2026-02-19_04-08-38.jpg',
+                    caption: 'Прошу поставить зачет, так как даже не смотря на то, что лабораторная работа не соответствует некоторым стандартам, я провел за ней кучу времени и достиг той точки качества, по которой эту лабоарторную можно судить. Делал я ее долго, поэтому на многое не отвечу, но основное кое-как но расскажу'
+                }
+            ];
+
+            for (let p of photos) {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.innerHTML = `
+                    <img src="${p.src}" alt="Фото" loading="lazy">
+                    <div class="caption">${p.caption}</div>
+                `;
+                grid.appendChild(item);
+            }
+
+            gallery.classList.add('show');
+            gallery.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
