@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 4</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lab4">
+    <header>
+        <h1>Лаба 4</h1>
+    </header>
+            <!-- Первое включение -->
+            <div class="exercise-container fade-in">
+                <h3 class="exercise-title"><span class="task-number">1</span>Работоспособность кнопки и вывод результата</h3>
+                
+                <div class="code-block">
+                    <pre>function checkConfirm() {
+    const result = confirm("Нажмите OK или Отмена");
+    return result ? "Вы нажали OK" : "Вы нажали Отмена";
+}</pre>
+                </div>
+                
+                <div class="buttons-container">
+                    <button class="btn-exercise" onclick="exercise1_1()">Кнопка</button>
+                </div>
+            </div>
+            
+            <!-- Редактирование -->
+            <div class="exercise-container fade-in">
+                <h3 class="exercise-title"><span class="task-number">2</span> Редактор под себя</h3>
+                
+                <div class="code-block">
+                    <pre>function greetUser() {
+    const surname = prompt("Введите вашу фамилию:", " ");
+    if (surname) {
+        alert(`Здравствуйте, ${surname}!`);
+    }
+}</pre>
+                </div>
+                
+                <div class="buttons-container">
+                    <button class="btn-exercise" onclick="exercise1_2()">Вводить фалилию или что хочешь</button>
+                </div>
+            </div>
+            
+            <!-- назойливый опросник -->
+            <div class="exercise-container fade-in">
+                <h3 class="exercise-title"><span class="task-number">3</span> Скажи мне кто ты и я скажу тебе кто ты</h3>
+                
+                <div class="code-block">
+                    <pre>function userInterview() {
+    const name = prompt("Ваше имя?", "Алексей");
+    const age = prompt("Сколько лет?", "20");
+    const mood = prompt("Как настроение?", "отличное");
+    
+    document.write(`&lt;p&gt;Здравствуй, ${name}&lt;/p&gt;`);
+    document.write(`&lt;p&gt;Тебе ${age} лет&lt;/p&gt;`);
+    document.write(`&lt;p&gt;И у тебя ${mood} настроение!&lt;/p&gt;`);
+}</pre>
+                </div>
+                
+                <div class="buttons-container">
+                    <button class="btn-exercise" onclick="exercise1_3()">Начать опрос</button>
+                    <button class="btn-exercise" onclick="resetOutput('output1_3')">Очистить вывод</button>
+                </div>
+            </div>
+            
+            <!-- конвертер -->
+            <div class="exercise-container fade-in">
+                <h3 class="exercise-title"><span class="task-number">4</span> ИЗ строки в число</h3>
+                
+                <div class="code-block">
+                    <pre>function convertAndSum() {
+    const x = prompt("Введите целое число x:", "10");
+    const y = prompt("Введите дробное число y:", "5.5");
+    
+    const integerX = parseInt(x, 10);
+    const floatY = parseFloat(y);
+    const result = integerX + floatY;
+    
+    return `x = ${x}, y = ${y}\n` +
+           `integerX = ${integerX}, floatY = ${floatY}\n` +
+           `Результат сложения: ${result}`;
+}</pre>
+                </div>
+                
+                <div class="buttons-container">
+                    <button class="btn-exercise" onclick="exercise1_4()">Жмай</button>
+                </div>
+            </div>
+           
+        <div class="task-container">
+            <h2 class="task-title">Дополнительный тест</h2>
+            
+            <div class="blocks-container">
+                <div class="block">
+                    <h4>Калькулятор квадратного уравнения</h4>
+                    <p>ax² + bx + c = 0</p>
+                    <div class="input-group">
+                        <label>a = <input type="number" id="coefA" value="1"></label>
+                        <label>b = <input type="number" id="coefB" value="-3"></label>
+                        <label>c = <input type="number" id="coefC" value="2"></label>
+                    </div>
+                    <button class="btn-exercise" onclick="solveQuadratic()">Жмай, чтобы проверить</button>
+                </div>
+                
+                <div class="block">
+                    <h4>Генератор случайных чисел</h4>
+                    <div class="input-group">
+                        <label>Минимум: <input type="number" id="randMin" value="1"></label>
+                        <label>Максимум: <input type="number" id="randMax" value="100"></label>
+                        <label>Количество: <input type="number" id="randCount" value="5" min="1" max="20"></label>
+                    </div>
+                    <button class="btn-exercise" onclick="generateRandomNumbers()">Жмай для генерации</button>
+                </div>
+                
+                <div class="block">
+                    <h4>Проверка числа на простоту</h4>
+                    <div class="input-group">
+                        <label>Число: <input type="number" id="primeNumber" value="17" min="2"></label>
+                    </div>
+                    <button class="btn-exercise" onclick="checkPrime()">Жмай, чтобы приисполнится</button>
+                </div>
+            </div>
+        </div>
+     </main>
+
+    <!-- Навигация -->
+    <div class="navigation">
+        <a href="../index.html" class="nav-btn">
+            <i class="fas fa-home"></i> Домой, Уолтер.
+        </a>
+        <div>
+            <a href="lab3.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <a href="lab5.html" class="nav-btn nav-btn-primary">
+                Далее <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/lab4.js"></script>
+</body>
+</html>

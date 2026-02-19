@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 7</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="lab7">
+
+<body>
+    <header>
+        <h1><i class="fas fa-object-group"></i> Лабa 7</h1>
+    </header>
+    
+    <!-- Работа с объектами -->
+    <div class="task-section">
+        <h2><i class="fas fa-tasks"></i>работа с объектами</h2>
+        
+        <div class="interactive-area">
+            <div class="task-header">
+                <button onclick="runExercise1Task()" class="task-button">
+                    <i class="fas fa-play-circle"></i> Жмать, чтобы получилось
+                </button>
+            </div>
+            <div id="result1" class="result">Результат должен появится тут...</div>
+        </div>
+    
+    <!-- обработка событий -->
+    <div class="task-section">
+        <h2><i class="fas fa-mouse-pointer"></i>обработка событий</h2>
+               
+        <!-- Область 1 -->
+        <div class="task-area">
+            <div class="task-header">
+                <button onclick="runExercise2Task1()" class="task-button">
+                    <i class="fas fa-bolt"></i> Жмать, чтобы получилось
+                </button>
+            </div>
+            <div class="interactive-controls" id="controls2_1">
+                <!-- Элементы управления -->
+            </div>
+            <div id="result2_1" class="result">Результат появятся тут...</div>
+        </div>
+        
+        <!-- Область 2 -->
+        <div class="task-area">
+            <div class="task-header">
+                <button onclick="runExercise2Task2()" class="task-button">
+                    <i class="fas fa-bolt"></i> Жмай, чтобы превозмочь
+                </button>
+            </div>
+            <div class="interactive-controls" id="controls2_2">
+                <!-- Элементы управления -->
+            </div>
+            <div id="result2_2" class="result">Результат будет тут...</div>
+        </div>
+    </div>
+    
+    <!-- Дополнительно -->
+
+        <div class="interactive-area">
+            <h3>работа с объектами</h3>
+            <button onclick="testObjectOperations()">Жмай, чтобы получилось</button>
+            <div id="testObjectResult" class="result"></div>
+        </div>
+        
+        <div class="interactive-area">
+            <h3>обработка событий</h3>
+            <div class="interactive-controls">
+                <button id="testEventButton" onmouseover="testMouseOver()" onmouseout="testMouseOut()">наведи мышь</button>
+                <input type="text" id="testEventInput" placeholder="Введите текст и кликните вне поля">
+                <button onclick="testAlert()">Тест alert</button>
+            </div>
+            <div id="testEventResult" class="result"></div>
+        </div>
+        
+        <div class="interactive-area">
+            <h3>Демонстрация работы с DOM</h3>
+            <div class="interactive-controls">
+                <button onclick="changeBackgroundColor()">Изменить цвет фона</button>
+                <button onclick="changeTextStyle()">Изменить стиль текста</button>
+                <button onclick="addNewElement()">Добавить новый элемент</button>
+                <button onclick="removeLastElement()">Удалить последний элемент</button>
+            </div>
+            <div id="demoArea" style="padding: 15px; border: 1px solid #ccc; margin-top: 15px; min-height: 50px;">
+                Область для демонстрации работы с DOM
+            </div>
+        </div>
+    </div>
+    
+    <!-- Навигация -->
+    <div class="navigation">
+        <a href="../index.html" class="nav-btn">
+            <i class="fas fa-home"></i> Домой, Уолтер
+        </a>
+        <div>
+            <a href="lab6.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <a href="lab8.html" class="nav-btn nav-btn-primary">
+                Далее <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/lab7.js"></script>
+</body>
+</html>

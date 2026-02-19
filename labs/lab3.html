@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 3</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="lab3">
+
+<body>
+    <header>
+        <h1>Лаба 3</h1>
+    </header>
+    
+    <main class="container">
+        <div class="task-container">
+            <h2 class="task-title">Создаю формы заполнения</h2>
+            
+            <div class="form-container animated-form" id="basicForm">
+                <form id="mainForm">
+                    <h3 style="color: #2c3e50; margin-bottom: 1.5rem;">Регистрация нового пользователя</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="fullName">ФИО:</label>
+                                <input type="text" id="fullName" name="fullName" class="form-control" 
+                                       placeholder="Введите ваше полное имя" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email">почта:</label>
+                                <input type="email" id="email" name="email" class="form-control" 
+                                       placeholder="example@mail.com" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="phone">Телефон:</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" 
+                                       placeholder="+7 (999) 999-99-99">
+                            </div>
+                        </div>
+                        
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="birthDate">Дата рождения:</label>
+                                <input type="date" id="birthDate" name="birthDate" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Пол:</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Мужской</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Женский</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Другой</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Интересы:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sports" name="interests" value="sports">
+                                <label for="sports">Спорт</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="music" name="interests" value="music">
+                                <label for="music">Музыка</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="books" name="interests" value="books">
+                                <label for="books">Книги</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="travel" name="interests" value="travel">
+                                <label for="travel">Путешествия</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tech" name="interests" value="tech">
+                                <label for="tech">Технологии</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Страна:</label>
+                        <select id="country" name="country" class="form-control">
+                            <option value="">Выберите страну</option>
+                            <option value="ru">Россия</option>
+                            <option value="by">Беларусь</option>
+                            <option value="tkm">Туркменистан</option>
+                            <option value="cn">Китай</option>
+                            <option value="other">Другая</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">О себе:</label>
+                        <textarea id="message" name="message" class="form-control" 
+                                  rows="4" placeholder="Напиши подробнее о себе..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="avatar">Аватар:</label>
+                        <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*">
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btn-primary">Отправить</button>
+                        <button type="reset" class="btn-secondary">Сбросить</button>
+                        <button type="button" class="btn-secondary" onclick="showFormData()">Показать данные</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="output-console" id="formOutput">
+                <h4>Данные формы:</h4>
+                <pre id="formDataOutput">Форма еще не отправлена</pre>
+            </div>
+        </div>
+        
+        <div class="task-container">
+            <h2 class="task-title">Формы заполнения под разные нужды</h2>
+            
+            <div class="variant-navigation">
+                <button class="btn" onclick="showVariantForm(0)">Очистить поле</button>
+                <button class="btn" onclick="showVariantForm(1)">Настройка цвета текста</button>
+                <button class="btn" onclick="showVariantForm(2)">Форма поездки в путешевствие</button>
+                <button class="btn" onclick="showVariantForm(3)">Анонимный опросник в интернете</button>
+            </div>
+            
+            <!-- 1 -->
+            <div id="variant1" class="variant-example">
+                <div class="example-form">
+                    <h3>Влияние параметров на косметику</h3>
+                    <form id="variantForm1">
+                        <div class="form-group">
+                            <label for="colorPicker">Выберите цвет:</label>
+                            <input type="color" id="colorPicker" name="color" value="#3498db" class="form-control" style="height: 50px;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rangeInput">Уровень насыщенности:</label>
+                            <input type="range" id="rangeInput" name="saturation" min="0" max="100" value="50" class="form-control">
+                            <span id="rangeValue">50%</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Тип градиента:</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="linear" name="gradient" value="linear" checked>
+                                    <label for="linear">Линейный</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="radial" name="gradient" value="radial">
+                                    <label for="radial">Радиальный</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="applyColorSettings()">Применить</button>
+                            <button type="reset" class="btn-secondary">Сбросить</button>
+                        </div>
+                    </form>
+                    
+                    <div id="colorPreview" style="margin-top: 1rem; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; min-height: 100px;">
+                        Предпросмотр цвета
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2 -->
+            <div id="variant2" class="variant-example">
+                <div class="example-form">
+                    <h3>Поездка на отдых</h3>
+                    <form id="variantForm2">
+                        <div class="form-group">
+                            <label>Выберите транспорт (можно несколько, если планируется изменение маршрута):</label>
+                            <div class="checkbox-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="plane" name="transport" value="plane">
+                                    <span class="checkmark"></span>
+                                    <label for="plane">Самолет</label>
+                                </div>
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="train" name="transport" value="train">
+                                    <span class="checkmark"></span>
+                                    <label for="train">Поезд</label>
+                                </div>
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="car" name="transport" value="car">
+                                    <span class="checkmark"></span>
+                                    <label for="car">Автомобиль</label>
+                                </div>
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="bus" name="transport" value="bus">
+                                    <span class="checkmark"></span>
+                                    <label for="bus">Автобус</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transportType">Тип транспорта:</label>
+                            <select id="transportType" name="transportType" class="form-control">
+                                <option value="">Выберите тип</option>
+                                <option value="public">Общественный</option>
+                                <option value="private">Частный</option>
+                                <option value="rental">Арендованный</option>
+                            </select>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="showTransportSelection()">Подтвердить</button>
+                            <button type="reset" class="btn-secondary">Сбросить</button>
+                        </div>
+                    </form>
+                    
+                    <div id="transportOutput" class="output-console" style="margin-top: 1rem;">
+                        <h4>Выбранный транспорт:</h4>
+                        <pre>Транспорт не выбран</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3 -->
+            <div id="variant3" class="variant-example">
+                <div class="example-form">
+                    <h3>Анонимный (Ну типо) онлайн опросник</h3>
+                    <form id="variantForm3">
+                        <div class="form-group">
+                            <label>Пол:</label>
+                            <div class="radio-group">
+                                <div class="custom-radio">
+                                    <input type="radio" id="gender_male" name="gender_variant" value="male">
+                                    <span class="radiomark"></span>
+                                    <label for="gender_male">Мужчина</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input type="radio" id="gender_female" name="gender_variant" value="female">
+                                    <span class="radiomark"></span>
+                                    <label for="gender_female">Женщина</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input type="radio" id="gender_other2" name="gender_variant" value="other">
+                                    <span class="radiomark"></span>
+                                    <label for="gender_other2">Другой</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ageGroup">Возраст:</label>
+                            <select id="ageGroup" name="ageGroup" class="form-control">
+                                <option value="18-25">18-25 лет</option>
+                                <option value="26-35">26-35 лет</option>
+                                <option value="36-50">36-50 лет</option>
+                                <option value="51+">51+ лет</option>
+                            </select>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn-primary" onclick="showGenderSelection()">Сохранить</button>
+                            <button type="reset" class="btn-secondary">Сбросить</button>
+                        </div>
+                    </form>
+                    
+                    <div id="genderOutput" class="output-console" style="margin-top: 1rem;">
+                        <h4>Выбранные данные:</h4>
+                        <pre>Данные не выбраны</pre>
+                    </div>
+                </div>
+            </div>
+            
+        <div class="task-container">
+            <h2 class="task-title">Измененние стиля с помощью css</h2>
+            
+            <div class="form-preview">
+                <h3>шаблоны стилей:</h3>
+                <div class="btn-group">
+                    <button class="btn" onclick="applyStylePreset('default')">Стандартный стиль 1.0</button>
+                    <button class="btn" onclick="applyStylePreset('modern')">Улучшеный стиль 2.0</button>
+                    <button class="btn" onclick="applyStylePreset('dark')">Темная тема</button>
+                    <button class="btn" onclick="applyStylePreset('colorful')">Цветной стиль</button>
+                </div>
+                
+                <div id="styleControls" style="margin-top: 1rem;">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="fontFamily">Шрифт:</label>
+                                <select id="fontFamily" class="form-control" onchange="updateFormStyle()">
+                                    <option value="Arial, sans-serif">Arial</option>
+                                    <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
+                                    <option value="Georgia, serif">Georgia</option>
+                                    <option value="'Courier New', monospace">Courier New</option>
+                                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="fontSize">Размер шрифта:</label>
+                                <input type="range" id="fontSize" min="12" max="24" value="16" class="form-control" oninput="updateFormStyle()">
+                                <span id="fontSizeValue">16px</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="bgColor">Цвет фона:</label>
+                                <input type="color" id="bgColor" value="#ffffff" class="form-control" onchange="updateFormStyle()">
+                            </div>
+                        </div>
+                        
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="textColor">Цвет текста:</label>
+                                <input type="color" id="textColor" value="#2c3e50" class="form-control" onchange="updateFormStyle()">
+                            </div>
+                        </div>
+                        
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="borderColor">Цвет рамки:</label>
+                                <input type="color" id="borderColor" value="#3498db" class="form-control" onchange="updateFormStyle()">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="borderRadius">Закругление углов:</label>
+                                <input type="range" id="borderRadius" min="0" max="20" value="8" class="form-control" oninput="updateFormStyle()">
+                                <span id="borderRadiusValue">8px</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="borderWidth">Толщина рамки:</label>
+                                <input type="range" id="borderWidth" min="1" max="10" value="2" class="form-control" oninput="updateFormStyle()">
+                                <span id="borderWidthValue">2px</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="styled-form" id="customStyledForm">
+                <h3 style="text-align: center;">Форма со стилизацией</h3>
+                <form id="styledForm">
+                    <div class="form-group">
+                        <label for="styledName">Имя:</label>
+                        <input type="text" id="styledName" name="styledName" class="form-control" placeholder="Введите имя">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="styledEmail">Email:</label>
+                        <input type="email" id="styledEmail" name="styledEmail" class="form-control" placeholder="email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="styledMessage">Сообщение:</label>
+                        <textarea id="styledMessage" name="styledMessage" class="form-control" rows="3" placeholder="Ваше сообщение..."></textarea>
+                    </div>
+                    
+                    <div class="btn-group" style="justify-content: center;">
+                        <button type="button" class="btn-primary" onclick="submitStyledForm()">Отправить</button>
+                        <button type="reset" class="btn-secondary">Очистить</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="output-console" id="styleOutput" style="margin-top: 1rem;">
+                <h4>Текущие стили формы:</h4>
+                <pre id="currentStyles">Стили по умолчанию</pre>
+            </div>
+        </div>
+        
+        <!-- Перемещение по сайту -->
+    <div class="navigation">
+        <a href="../index.html" class="nav-btn">
+            <i class="fas fa-home"></i> Домой, Уолтер.
+        </a>
+        <div>
+            <a href="lab2.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <a href="lab4.html" class="nav-btn nav-btn-primary">
+                Далее <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="../js/lab3.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 6</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="lab6">   <!-- только один body с классом lab6 -->
+    <header>
+        <h1><i class="fas fa-code"></i> Лаба 6</h1>
+    </header>
+    
+    <!-- обработка строк -->
+    <div class="task-section">
+        <h2>работа со строками</h2>
+        <button onclick="runTask1()">Жмай для своего удовлетворения</button>
+        <div id="result1" class="result">Ща, тут что-то будет...</div>
+    </div>
+    
+    <!-- Регулярные выражения -->
+    <div class="task-section">
+        <h2>Регулярные выражения</h2>
+        <button onclick="runTask2()">Жмай для своего удовлетворения</button>
+        <div id="result2" class="result">Ща, тут что-то будет...</div>
+    </div>
+    
+    <div class="task-section">
+        <h3>Тестирование строковых операций</h3>
+        <input type="text" id="testString" placeholder="Введите строку" value="Пример строки">
+        <button onclick="testStringOperations()">Жмай для своего удовлетворения</button>
+        <div id="testResult" class="result"></div>
+        
+        <h3>Тестирование регулярных выражений</h3>
+        <input type="text" id="regexPattern" placeholder="Регулярное выражение" value="\b\w{3}\b">
+        <input type="text" id="regexText" placeholder="Текст для проверки" value="Это тест регулярного выражения">
+        <button onclick="testRegex()">Жмай для своего удовлетворения</button>
+        <div id="regexResult" class="result"></div>
+    </div>
+    
+    <!-- Навигация -->
+    <div class="navigation">
+        <a href="../index.html" class="nav-btn">
+            <i class="fas fa-home"></i> Домой, Уолтер
+        </a>
+        <div>
+            <a href="lab5.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <a href="lab7.html" class="nav-btn nav-btn-primary">
+                Далее <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/lab6.js"></script>
+</body>
+</html>

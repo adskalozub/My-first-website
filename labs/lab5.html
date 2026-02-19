@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 5</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="lab5">
+
+<body>
+    <!-- Красота ввеху страницы -->
+    <header class="hero">
+        <div class="container">
+            <h1><i class="fas fa-code"></i> Лаба 5</h1>
+        </div>
+    </header>
+    
+        <div class="task-container" id="exercise1">
+            <h2 class="task-title"><i class="fas fa-list-ol"></i> Массивы на жаве</h2>
+            
+            <div class="variant-blocks">
+                <!-- Блок 1 -->
+                <div class="variant-block">
+                    <h4>Заполнение массива числами</h4>
+                    <div class="controls">
+                        <button class="btn btn-purple" onclick="runExercise1_1()">
+                            <i class="fas fa-play"></i> Жмать сюды
+                        </button>
+                        <button class="btn" onclick="showCode1_1()">
+                            <i class="fas fa-code"></i>Показать че ваще происходит
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Блок 2 -->
+                <div class="variant-block">
+                    <h4>Заполнение массива символами</h4>
+                    <div class="controls">
+                        <button class="btn btn-purple" onclick="runExercise1_2()">
+                            <i class="fas fa-play"></i> Жмать сюды
+                        </button>
+                        <button class="btn" onclick="showCode1_2()">
+                            <i class="fas fa-code"></i>Показать че ваще происходит
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Блок 3 -->
+                <div class="variant-block">
+                    <h4>Сумма элементов массива</h4>
+                    <div class="function-controls">
+                        <div class="input-group">
+                            <label for="arrayInput1">Введите массив (через запятую):</label>
+                            <input type="text" id="arrayInput1" value="1,2,3,4,5,6">
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-purple" onclick="runExercise1_3()">
+                            <i class="fas fa-play"></i> Жмать сюды
+                        </button>
+                        <button class="btn" onclick="showCode1_3()">
+                            <i class="fas fa-code"></i>Показать че ваще происходит
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Блок 4 -->
+                <div class="variant-block">
+                    <h4>Проверка одинаковых чисел подряд</h4>
+                    <div class="function-controls">
+                        <div class="input-group">
+                            <label for="arrayInput2">Введите массив (через запятую):</label>
+                            <input type="text" id="arrayInput2" value="1,2,2,3,4,5">
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-purple" onclick="runExercise1_4()">
+                            <i class="fas fa-play"></i> Жмать сюды
+                        </button>
+                        <button class="btn" onclick="showCode1_4()">
+                            <i class="fas fa-code"></i> Показать че ваще происходит
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Консоль вывода -->
+            <div class="console-container">
+                <div class="console-header">
+                    <h4><i class="fas fa-terminal"></i> Консоль вывода</h4>
+                    <button class="btn btn-danger btn-small" onclick="clearConsole1()">
+                        <i class="fas fa-trash"></i> Очистить
+                    </button>
+                </div>
+                <div class="console-content" id="console1">
+                    Результаты выполнения ==> ...
+                </div>
+            </div>
+            
+            <!-- Код скрытый по умолчанию -->
+            <div class="code-preview" id="code1_1" style="display: none;">
+                <h4>Код:</h4>
+                <code>function fillArrayWithNumbers(n) {
+    const arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push(i.toString().repeat(i));
+    }
+    return arr;
+}</code>
+            </div>
+            
+            <div class="code-preview" id="code1_2" style="display: none;">
+                <h4>Код 2:</h4>
+                <code>function fillArrayWithChars(char, n) {
+    const arr = [];
+    for (let i = 1; i <= n; i++) {
+        arr.push(char.repeat(i));
+    }
+    return arr;
+}</code>
+            </div>
+            
+            <div class="code-preview" id="code1_3" style="display: none;">
+                <h4>Код 3:</h4>
+                <code>function countElementsToSumMoreThan10(arr) {
+    let sum = 0;
+    let count = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        count++;
+        if (sum > 10) {
+            return count;
+        }
+    }
+    
+    return "Сумма всех элементов меньше или равна 10";
+}</code>
+            </div>
+            
+            <div class="code-preview" id="code1_4" style="display: none;">
+                <h4>Код 4:</h4>
+                <code>function hasConsecutiveDuplicates(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] === arr[i + 1]) {
+            return "да";
+        }
+    }
+    return "нет";
+}</code>
+            </div>
+        </div>
+        
+        <!-- Функции поиска чисел -->
+        <div class="task-container" id="exercise2">
+            <h2 class="task-title"><i class="fas fa-cogs"></i>пользовательские функции</h2>
+            
+            <div class="variant-blocks">
+                <div class="variant-block">
+                    <h4>Функция поиска простых чисел</h4>
+                    <div class="function-controls">
+                        <div class="input-group">
+                            <label for="primeInput">Введите число:</label>
+                            <input type="number" id="primeInput" value="11" min="2">
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-purple" onclick="runExercise2_1()">
+                            <i class="fas fa-play"></i> Жмать сюды
+                        </button>
+                        <button class="btn" onclick="showCode2_1()">
+                            <i class="fas fa-code"></i>Показать че ваще происходит
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="variant-block">
+                    <h4>Функция наим общ крат чисел от 1 до n</h4>
+                    <div class="function-controls">
+                        <div class="input-group">
+                            <label for="nokInput">Введите число n:</label>
+                            <input type="number" id="nokInput" value="5" min="1" max="20">
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-purple" onclick="runExercise2_2()">
+                            <i class="fas fa-play"></i> Жмать сюды
+                        </button>
+                        <button class="btn" onclick="showCode2_2()">
+                            <i class="fas fa-code"></i>Показать че ваще происходит
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Консоль вывода результата -->
+            <div class="console-container">
+                <div class="console-header">
+                    <h4><i class="fas fa-terminal"></i> Консоль вывода</h4>
+                    <button class="btn btn-danger btn-small" onclick="clearConsole2()">
+                        <i class="fas fa-trash"></i> Очистить
+                    </button>
+                </div>
+                <div class="console-content" id="console2">
+                    Результаты выполнения ==> ...
+                </div>
+            </div>
+            
+            <!-- Код скрытый от глаз людских -->
+            <div class="code-preview" id="code2_1" style="display: none;">
+                <h4>Код 1:</h4>
+                <code>function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+    
+    return true;
+}
+
+function findNextPrime(num) {
+    if (!isPrime(num)) return 0;
+    
+    let next = num + 1;
+    while (!isPrime(next)) {
+        next++;
+    }
+    return next;
+}</code>
+            </div>
+            
+            <div class="code-preview" id="code2_2" style="display: none;">
+                <h4>Код 2:</h4>
+                <code>function gcd(a, b) {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+function lcmOfRange(n) {
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result = lcm(result, i);
+    }
+    return result;
+}</code>
+            </div>
+        </div>
+        
+        <!-- Дополнительные задания-->
+        <div class="task-container" id="additional">
+            <h2 class="task-title"><i class="fas fa-star"></i> Дополнения</h2>
+            
+            <!-- Сортировка массивов -->
+            <div class="exercise-container">
+                <div class="exercise-header">
+                    <h3><i class="fas fa-sort-amount-down"></i> Сортировка массивов</h3>
+                    <div class="exercise-number">1</div>
+                </div>
+
+                <div class="function-controls">
+                    <div class="input-group">
+                        <label for="sortArrayInput">Массив для сортировки:</label>
+                        <input type="text" id="sortArrayInput" value="5,3,8,1,9,2,7,4,6">
+                    </div>
+                    <div class="input-group">
+                        <label for="sortAlgorithm">Алгоритм сортировки:</label>
+                        <select id="sortAlgorithm">
+                            <option value="bubble">Пузырьковая сортировка</option>
+                            <option value="selection">Сортировка выбором</option>
+                            <option value="insertion">Сортировка вставками</option>
+                            <option value="quick">Быстрая сортировка</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-purple" onclick="visualizeSorting()">
+                        <i class="fas fa-play"></i> Жмать, чтобы показать сортировку графически
+                    </button>
+                    <button class="btn btn-success" onclick="runSorting()">
+                        <i class="fas fa-bolt"></i> Жмать, чтобы быстро отсортировать
+                    </button>
+                    <button class="btn" onclick="showSortingCode()">
+                        <i class="fas fa-code"></i> Показать че ваще происходит
+                    </button>
+                </div>
+                
+                <div class="sorting-visualization" id="sortingVisualization">
+                    <!-- гдето тут появляется визуализация как раз таки -->
+                </div>
+                
+                <div class="console-container">
+                    <div class="console-header">
+                        <h4><i class="fas fa-terminal"></i> Резы сортировки</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Поиск в массиве -->
+            <div class="exercise-container">
+                <div class="exercise-header">
+                    <h3><i class="fas fa-search"></i> Поиск в массиве</h3>
+                    <div class="exercise-number">2</div>
+                </div>
+            
+                <div class="function-controls">
+                    <div class="input-group">
+                        <label for="searchArrayInput">Отсортированный массив:</label>
+                        <input type="text" id="searchArrayInput" value="1,3,5,7,9,11,13,15,17,19">
+                    </div>
+                    <div class="input-group">
+                        <label for="searchValue">Элемент для поиска:</label>
+                        <input type="number" id="searchValue" value="11">
+                    </div>
+                    <div class="input-group">
+                        <label for="searchAlgorithm">Алгоритм поиска:</label>
+                        <select id="searchAlgorithm">
+                            <option value="linear">Линейный </option>
+                            <option value="binary">Бинарный </option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-purple" onclick="visualizeSearch()">
+                        <i class="fas fa-play"></i> Жмать, чтобы визуализировать поиск
+                    </button>
+                    <button class="btn" onclick="showSearchCode()">
+                        <i class="fas fa-code"></i> Показать че ваще происходит
+                    </button>
+                </div>
+                
+                <div class="array-container" id="searchVisualization">
+                    <!-- тут вроде показывает визуализацию -->
+                </div>
+                
+                <div class="console-container">
+                    <div class="console-header">
+                        <h4><i class="fas fa-terminal"></i> Резы поиска</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Работа с матрицами -->
+            <div class="exercise-container">
+                <div class="exercise-header">
+                    <h3><i class="fas fa-th"></i> Работа с матрицами</h3>
+                    <div class="exercise-number">3</div>
+                </div>
+        
+                <div class="function-controls">
+                    <div class="input-group">
+                        <label for="matrixRows">Количество строк:</label>
+                        <input type="number" id="matrixRows" value="3" min="1" max="10">
+                    </div>
+                    <div class="input-group">
+                        <label for="matrixCols">Количество столбцов:</label>
+                        <input type="number" id="matrixCols" value="3" min="1" max="10">
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-purple" onclick="createMatrix()">
+                        <i class="fas fa-plus"></i> Жмать, чтобы создать матрицу
+                    </button>
+                    <button class="btn btn-success" onclick="transposeMatrix()">
+                        <i class="fas fa-exchange-alt"></i> Жмать, чтобы транспонировать
+                    </button>
+                    <button class="btn btn-warning" onclick="sumMatrixDiagonals()">
+                        <i class="fas fa-calculator"></i> Жмать, чтобы получить сумму диагоналей
+                    </button>
+                </div>
+                
+                <div id="matrixContainer">
+                    <!-- Матрица должна быть тута -->
+                </div>
+                
+                <div class="console-container">
+                    <div class="console-header">
+                        <h4><i class="fas fa-terminal"></i> Резы работы с матрицами</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Меню выбора (хоть где-то оно есть) -->
+    <div class="navigation">
+        <a href="../index.html" class="nav-btn">
+            <i class="fas fa-home"></i> Домой, Уолтер.
+        </a>
+        <div>
+            <a href="lab4.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <a href="lab6.html" class="nav-btn nav-btn-primary">
+                Далее <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/lab5.js"></script>
+</body>
+</html>

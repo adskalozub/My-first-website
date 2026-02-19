@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 2 - Как сайт прям делать, но не совсем</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="lab2">
+<body>
+    <header>
+        <h1><i class="fas fa-table"></i> Лаба №2</h1>
+    </header>
+    
+    <!-- Таблички -->
+    <div class="task-section">
+        <h2 class="task-title">Создаю таблицы</h2>
+        
+        <div class="example-group">
+            <h3>Простая табличка 2x2</h3>
+            <button onclick="createTable1()">Жмать сюда</button>
+            <div id="table1" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Табличка с заголовками</h3>
+            <button onclick="createTable2()">Жмать сюда</button>
+            <div id="table2" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Табличка с объединенными ячейками</h3>
+            <button onclick="createTable3()">Жмать сюда</button>
+            <div id="table3" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Табличка с разными размерами</h3>
+            <button onclick="createTable4()">Жмать сюда</button>
+            <div id="table4" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>ОООООЧЕНЬ сложная табличка</h3>
+            <button onclick="createTable5()">Жмать сюда, чтобы показать ОООООЧЕНЬ сложную табличку</button>
+            <div id="table5" class="table-container"></div>
+        </div>
+    </div>
+    
+    <!-- Еще таблички -->
+    <div class="task-section">
+        <h2 class="task-title">Объединяю ячейки таблиц</h2>
+        
+        <div class="example-group">
+            <h3>Объединяю по горизонтали</h3>
+            <button onclick="createMergeTable1()">Жмать сюда</button>
+            <div id="mergeTable1" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Объединяю по вертикали</h3>
+            <button onclick="createMergeTable2()">Жмать сюда</button>
+            <div id="mergeTable2" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Сложно объединяю</h3>
+            <button onclick="createMergeTable3()">Жмать сюда</button>
+            <div id="mergeTable3" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Объединяю в обе стороны</h3>
+            <button onclick="createMergeTable4()">Жмать сюда</button>
+            <div id="mergeTable4" class="table-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Комбинирую объединение</h3>
+            <button onclick="createMergeTable5()">Жмать сюда</button>
+            <div id="mergeTable5" class="table-container"></div>
+        </div>
+    </div>
+    
+    <!-- Списочечки -->
+    <div class="task-section">
+        <h2 class="task-title">Создаю нумерованные списки</h2>
+        
+        <div class="example-group">
+            <h3>Заглавные букавы</h3>
+            <button onclick="createList1()">Делать тык сюда</button>
+            <div id="list1" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Создаю список со строчными буквами</h3>
+            <button onclick="createList2()">Делать тык сюда</button>
+            <div id="list2" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Создаю список с римскими цифрами (заглавными)</h3>
+            <button onclick="createList3()">Делать тык сюда</button>
+            <div id="list3" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Создаю список с римскими цифрами (строчными)</h3>
+            <button onclick="createList4()">Делать тык сюда</button>
+            <div id="list4" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Создаю стандартный нумерованный список</h3>
+            <button onclick="createList5()">Делать тык сюда</button>
+            <div id="list5" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Создаю сложный(!!!!!!!!!!!!!!!) нумерованный список</h3>
+            <button onclick="createComplexList()">Делать тык, чтобы показать сложный(!!!!!!!!!!!!!!) список</button>
+            <div id="complexList" class="output"></div>
+        </div>
+    </div>
+    
+    <!-- Ура картиночки -->
+    <div class="task-section">
+        <h2 class="task-title">Работа со стоковыми фото</h2>
+        
+        <div class="example-group">
+            <h3>Изображение с параметрами</h3>
+            <button onclick="createImage1()">Делать тык сюда</button>
+            <div id="image1" class="image-container"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Выравнил по левому краю</h3>
+            <button onclick="createImage2()">Делать тык сюда</button>
+            <div id="image2" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Выравнил по правому краю</h3>
+            <button onclick="createImage3()">Делать тык сюда</button>
+            <div id="image3" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Выравнил по центру</h3>
+            <button onclick="createImage4()">Делать тык сюда</button>
+            <div id="image4" class="output"></div>
+        </div>
+        
+        <div class="example-group">
+            <h3>Выравнил по нижней линии</h3>
+            <button onclick="createImage5()">Делать тык сюда</button>
+            <div id="image5" class="output"></div>
+        </div>
+    </div>
+    
+    <!-- Я сделал свою мини википедию -->
+    <div class="task-section">
+        <h2 class="task-title">CTRL+C, CTRL+V</h2>
+        <p>"Сибирь (Усольский район)"</p>
+        
+        <div class="example-group">
+            <button onclick="createWikiArticle()">Нажми, чтобы магия случилась</button>
+            <div id="wikiArticle" class="wiki-content"></div>
+        </div>
+    </div>
+    
+    <!-- удобное перемещение по имеющимся страницам -->
+    <div class="navigation">
+        <a href="../index.html" class="nav-btn">
+            <i class="fas fa-home"></i> Домой, Уолтер.
+        </a>
+        <div>
+            <a href="lab1.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <a href="lab3.html" class="nav-btn nav-btn-primary">
+                Далее <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/lab2.js"></script>
+</body>
+</html>
